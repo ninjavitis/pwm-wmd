@@ -17,7 +17,7 @@ function App() {
     titleHeader: {
       color: '#ff0080',
       textAlign: 'center',
-      margin: '25px',
+      margin: '25px, 0px, 10px, 0px',
       fontFamily: "objektiv-mk1, sans-serif",
       fontWeight: '900',
       fontStyle: 'italic',

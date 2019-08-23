@@ -4,7 +4,7 @@ import { Box, Grid, Container, Typography, Paper, Button} from "@material-ui/cor
 import { styled, makeStyles } from '@material-ui/styles';
 
 import NavBar from './Components/Navbar'
-import Portfolio from './Components/Portfolio'
+import GriswoldCard from './Components/GriswoldCard'
 
 
 function App() {
@@ -54,11 +54,15 @@ function App() {
     summary:{
       background:'#252525', 
       padding: '25px',
-      marginLeft: '100px',
-      marginRight: '100px'
+      marginLeft: '0%',
+      marginRight: '0%',
+      minHeight: '500px',
+    },
+    summaryContainer:{
+      overflow: 'auto'
     },
     summaryText:{
-      color: '#ddd',
+      color: '#999',
       fontFamily: "objektiv-mk1, sans-serif",
       fontWeight: '700',
       fontStyle: 'normal'
@@ -97,19 +101,35 @@ function App() {
             </Grid>
         </Grid>
       </Paper>
-      <Container >
-
-
-        <Paper className={classes.summary}>
+      <Container>
+        <Paper className={classes.summary} style={{overflow:'auto'}}>
           <Typography paragraph className={classes.summaryText}>
             I'm a highly motivated and passionate developer with over 7 years of PC and console game development experience in QA (Starhawk, Sony Santa Monica), Project Management (Starhawk, Sony Santa Monica) and System Design (Star Citizen, Cloud Imperium Games) roles. I also have 5+ years of event production and travel logistics experience as well a background in datacenter operations and system admin. Recently graduated from the University of Utah full-stack development program with a focus on Javascript, React, Ruby and Rails.
           </Typography>
           <Typography paragraph className={classes.summaryText}>
             In my spare time I develop an agent based economic simulator in c++, a Android mobile clicker game in Unreal Engine 4 and a demo e-commerce platform in React.js. 
           </Typography>
+          <Grid container spacing={3} justify='center'>
+            <Grid item>
+              <GriswoldCard />
+            </Grid>
+            <Grid item>
+              <GriswoldCard />
+            </Grid>
+            <Grid item>
+              <GriswoldCard />
+            </Grid>
+            <Grid item>
+              <GriswoldCard />
+            </Grid>
+            <Grid item>
+              <GriswoldCard />
+            </Grid>
+            <Grid item>
+              <GriswoldCard />
+            </Grid>
+          </Grid>
         </Paper>
-        <Grid container>
-        </Grid>
       </Container>
     </AppBackground>
   );

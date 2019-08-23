@@ -4,7 +4,7 @@ import { Box, Grid, Container, Typography, Paper, Button} from "@material-ui/cor
 import { styled, makeStyles } from '@material-ui/styles';
 
 import NavBar from './Components/Navbar'
-import GriswoldCard from './Components/GriswoldCard'
+import PortfolioCard from './Components/PortfolioCard'
 
 
 function App() {
@@ -111,22 +111,31 @@ function App() {
           </Typography>
           <Grid container spacing={3} justify='center'>
             <Grid item>
-              <GriswoldCard />
+              <PortfolioCard 
+                header={'Project Griswold'}
+                body={
+                  'Project Griswold is an Unreal Engine 4 sandbox to explore agent-based economics, UI scripting and shader authoring.  Based on concepts I designed and developed for Star Citizen and using assets from the Relic classic Homeworld 2.'
+                }
+                tags={['c++', 'UE4', 'Blueprint']}
+              />
             </Grid>
             <Grid item>
-              <GriswoldCard />
+              <PortfolioCard 
+                header={'Star Citizen'}
+                body={
+                  'Star Citizen aims to be the premier space combat simulation on any platform.  From 2012 - 2018 I desined and developed most of the core vehicle item and resource systems and worked on the flight control system with the physics team.'
+                }
+                tags={['CryEngine', 'Excel+VBA', 'Illustrator', 'Atlassian']}
+              />
             </Grid>
             <Grid item>
-              <GriswoldCard />
-            </Grid>
-            <Grid item>
-              <GriswoldCard />
-            </Grid>
-            <Grid item>
-              <GriswoldCard />
-            </Grid>
-            <Grid item>
-              <GriswoldCard />
+              <PortfolioCard 
+                header={'Buy My Bits'}
+                body={
+                  'Buy My Bits is a front-end JS + React shopping cart that features internal + external product sets accessible through a custom API toggle, a cart with full quanity control as well as full Stripe payment processing functionality.'
+                }
+                tags={['JS', 'React', 'Rails', 'Stripe']}
+              />
             </Grid>
           </Grid>
         </Paper>

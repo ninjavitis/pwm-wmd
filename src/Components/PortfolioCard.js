@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
+
 
 const useStyles = makeStyles({
   card: {
@@ -34,7 +36,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function PortfolioCard({header, body, image, link, tags}) {
   const classes = useStyles();
 
   return (
@@ -42,25 +44,20 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image=""
-          title="Project Griswold"
+          image={image}
+          title={header}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2" className={classes.cardTitle}>
-            Project Griswold
+            {header}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p" className={classes.cardText}>
-           Project Griswold is an Unreal Engine 4 sandbox to explore agent-based economics, UI scripting and shader authoring.  Based on concepts I designed and developed for Star Citizen and using assets from Relic classic 'Homeworld 2'.
+            {body}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" className={classes.linkButton}>
-          Source
-        </Button>
-        <Button size="small" color="primary" className={classes.linkButton}>
-          Executable
-        </Button>
+        {tags && tags.map(tag=> <Chip size="small" label={tag} />)}
       </CardActions>
     </Card>
   );

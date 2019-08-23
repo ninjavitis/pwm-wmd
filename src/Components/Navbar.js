@@ -11,7 +11,6 @@ const  Navbar = () => {
   return (
     <TopBar position="static">
       <Toolbar>
-
       </Toolbar>
     </TopBar>
   );

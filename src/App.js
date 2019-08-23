@@ -111,7 +111,8 @@ function App() {
           </Typography>
           <Grid container spacing={3} justify='center'>
             <Grid item>
-              <PortfolioCard 
+              <PortfolioCard
+                image={'/images/griswold/griswold.png'}
                 header={'Project Griswold'}
                 body={
                   'Project Griswold is an Unreal Engine 4 sandbox to explore agent-based economics, UI scripting and shader authoring.  Based on concepts I designed and developed for Star Citizen and using assets from the Relic classic Homeworld 2.'
@@ -120,7 +121,8 @@ function App() {
               />
             </Grid>
             <Grid item>
-              <PortfolioCard 
+              <PortfolioCard
+                image={'/images/star_citizen/starCitizen.jpg'} 
                 header={'Star Citizen'}
                 body={
                   'Star Citizen aims to be the premier space combat simulation on any platform.  From 2012 - 2018 I desined and developed most of the core vehicle item and resource systems and worked on the flight control system with the physics team.'
@@ -129,12 +131,13 @@ function App() {
               />
             </Grid>
             <Grid item>
-              <PortfolioCard 
+              <PortfolioCard
+                image={'/images/buyMyBits/buyMyBits.png'} 
                 header={'Buy My Bits'}
                 body={
                   'Buy My Bits is a front-end JS + React shopping cart that features internal + external product sets accessible through a custom API toggle, a cart with full quanity control as well as full Stripe payment processing functionality.'
                 }
-                tags={['JS', 'React', 'Rails', 'Stripe']}
+                tags={['JS', 'React', 'Rails', 'SQL','Stripe']}
               />
             </Grid>
           </Grid>

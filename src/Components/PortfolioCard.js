@@ -40,7 +40,7 @@ export default function PortfolioCard({header, body, image, link, tags}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} elevation={10}> 
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -57,7 +57,7 @@ export default function PortfolioCard({header, body, image, link, tags}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {tags && tags.map(tag=> <Chip size="small" label={tag} />)}
+        {tags && tags.map((tag, i)=> <Chip key={i} size="small" label={tag} />)}
       </CardActions>
     </Card>
   );

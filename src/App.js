@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
 import { Box, Grid, Container, Typography, Paper, Button} from "@material-ui/core";
 import { styled, makeStyles } from '@material-ui/styles';
@@ -8,18 +8,13 @@ import PortfolioCard from './Components/PortfolioCard'
 
 
 function App() {
+  const [page, setPage] = useState(0)
+
   const AppBackground = styled(Box)({
     background: 'repeating-linear-gradient(-45deg, #111111, #111111 6px, #1a1a1a 6px, #1a1a1a 12px)',
     minHeight:'100vh',
     backgroundSize: 'cover'
   })
-  
-  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-  var viewPortWidthRatio = (w - 360) / (500 - 360)
-  console.log(w)
-  console.log(viewPortWidthRatio)
 
   const useStyles = makeStyles(theme => ({
     headerBox:{
@@ -36,9 +31,8 @@ function App() {
       fontStyle: 'italic',
     },
     titleSubHeader:{
-      color: '#555',
-      textShadow:
-        '0px 0px 0 #666666, 1px 1px 0 #ff0078',
+      color: '#999',
+    
       textAlign: 'center',
       margin: '0px',
       fontFamily: "objektiv-mk1, sans-serif",
@@ -49,7 +43,7 @@ function App() {
         top:'-3px',
         left:'-3px',
         textShadow:
-        '0px 0px 0 #777777, 1px 1px 0 #ff005a, 2px 2px 0 #ff0078, 3px 3px 0 #ff0078, 4px 4px 0 #ff0078',
+        '-.5px -.5px 0 #333, 1px 1px 0 #ff005a, 2px 2px 0 #ff0078, 3px 3px 0 #ff0078, 4px 4px 0 #ff0078',
       },
     },
     linkButton:{
@@ -67,13 +61,12 @@ function App() {
       overflow:'auto'
     },
     summaryPaper:{
-      background:'#353535',
+      background:'#333',
       paddingTop:'20px',
       paddingBottom:'20px',
       paddingLeft:'25px',
       paddingRight:'25px',
       marginBottom:'25px',
-
     },
     summaryText:{
       color: '#999',
@@ -89,7 +82,7 @@ function App() {
     <Paper className={classes.mainPaper}>
     <Grid container direction="column">
       <Grid item>
-      <Paper className={classes.summaryPaper}>
+      <Paper className={classes.summaryPaper} elevation={24}>
         <Typography className={classes.summaryText}>
           I'm a highly motivated and passionate developer with over 7 years of PC and console game development experience in QA, Project Management and System Design roles. I also have 5+ years of event production and travel logistics experience as well a background in datacenter operations and system admin. Recently graduated from the University of Utah full-stack development program with a focus on Javascript, React, Ruby and Rails.
         </Typography>
@@ -97,7 +90,7 @@ function App() {
       </Grid>
       <Grid container spacing={3} justify='center'>
         <Grid item>
-          <PortfolioCard
+          <PortfolioCard 
             image={'/images/griswold/griswold.png'}
             header={'Project Griswold'}
             body={
@@ -107,7 +100,7 @@ function App() {
           />
         </Grid>
         <Grid item>
-          <PortfolioCard
+          <PortfolioCard 
             image={'/images/star_citizen/starCitizen.jpg'} 
             header={'Star Citizen'}
             body={

@@ -4,15 +4,18 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 
+const imageRatio = 0.5625
+const imageWidth = 85
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 345,
+    transitionDuration: '0.3s',
     background:'#333'
   },
   cardTitle:{
@@ -32,33 +35,35 @@ const useStyles = makeStyles({
     fontWeight: '700',
   },
   media: {
-    height: 140,
+    width: `${imageWidth}vw`,
+    height: `calc(${imageWidth}vw * ${imageRatio})`,
   },
 });
 
-export default function PortfolioCard({header, body, image, link, tags}) {
+
+const DetailCard = ({image, header, subheader, body}) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card} elevation={10}> 
-      <CardActionArea onClick={()=>console.log('click')}>
-        <CardMedia
-          className={classes.media}
-          image={image}
+    <Card className={classes.card}>
+      <CardActionArea>
+      <CardHeader
+          className={classes.cardTitle}
           title={header}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" className={classes.cardTitle}>
-            {header}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" className={classes.cardText}>
-            {body}
-          </Typography>
-        </CardContent>
+        <CardMedia
+            className={classes.media}
+            image={image}
+            title={header}
+        />
+      <CardContent>
+      <Typography className={classes.cardText}>
+          {body}
+        </Typography>
+      </CardContent>
       </CardActionArea>
-      <CardActions>
-        {tags && tags.map((tag, i)=> <Chip key={i} size="small" label={tag} />)}
-      </CardActions>
     </Card>
   );
 }
+
+export default DetailCard;

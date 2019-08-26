@@ -5,6 +5,7 @@ import { styled, makeStyles } from '@material-ui/styles';
 
 import NavBar from './Components/Navbar'
 import PortfolioCard from './Components/PortfolioCard'
+import Griswold from './Components/Griswold'
 
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
 
   const useStyles = makeStyles(theme => ({
     headerBox:{
-      marginBottom:'25px',
-      padding: '0px',
-      background:'linear-gradient(rgba(26, 26, 26, 1) 50%,rgba(26, 26, 26, 0))',
+      marginBottom:'0px',
+      paddingBottom:'50px',
+      background:'linear-gradient(rgba(26, 26, 26, 1) 60%,rgba(26, 26, 26, 0))',
     },
     titleHeader: {
       color: '#ff0078',
@@ -32,7 +33,6 @@ function App() {
     },
     titleSubHeader:{
       color: '#999',
-    
       textAlign: 'center',
       margin: '0px',
       fontFamily: "objektiv-mk1, sans-serif",
@@ -104,7 +104,7 @@ function App() {
             image={'/images/star_citizen/starCitizen.jpg'} 
             header={'Star Citizen'}
             body={
-              'Star Citizen aims to be the premier space combat simulation on any platform.  From 2012 - 2018 I designed and developed most of the core vehicle item and resource systems, flight control accessibility systems and the item pricing and economy systems.'
+              'In development since 2012, Star Citizen aims to be the premier space combat simulation.  From 2012 - 2018 I designed and developed most of the core vehicle item and resource systems, flight control accessibility systems and the item pricing and economy systems.'
             }
             tags={['CryEngine', 'Excel+VBA', 'Illustrator', 'Atlassian']}
           />
@@ -135,7 +135,7 @@ function App() {
                   PETER MACKAY
                 </Typography>
               </Grid>
-              <Grid container direction="row" justify="center" alignItems="center">
+              <Grid container direction="row" justify="center" alignItems="center"  spacing={2}>
                 <Grid item>
                   <Button href="mailto:peter.mackay.1187@gmail.com" className={classes.linkButton}>
                     <Typography variant="h6" className={classes.titleSubHeader}>
@@ -150,12 +150,19 @@ function App() {
                     </Typography> 
                   </Button>
                 </Grid>
+            <Grid item>
+              <Button href="http://linkedin.com/petermackay-2501" className={classes.linkButton}>
+                <Typography variant="h6" className={classes.titleSubHeader}>
+                  linkedin.com/petermackay-2501
+                </Typography> 
+              </Button>
+            </Grid>
               </Grid>
             </Grid>
         </Grid>
       </Paper>
-      <Container>
-        {main}
+      <Container justify="center">
+        <Griswold />
       </Container>
     </AppBackground>
   );

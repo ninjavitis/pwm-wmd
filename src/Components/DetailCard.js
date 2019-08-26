@@ -13,7 +13,8 @@ const imageWidth = 85
 const useStyles = makeStyles({
   card: {
     transitionDuration: '0.3s',
-    background:'#333'
+    background:'#333',
+    maxWidth: '90vw'
   },
   cardTitle:{
     color: '#d0ff00',
@@ -42,8 +43,8 @@ const useStyles = makeStyles({
     
   },
   media: {
-    width: `${imageWidth}vw`,
-    height: `calc(${imageWidth}vw * ${imageRatio})`,
+    width: '100%',
+    paddingTop: '56.25%'
   },
 });
 

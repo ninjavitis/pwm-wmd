@@ -22,7 +22,7 @@ function App() {
   return (
     <AppBackground>
       <NavBar />
-      <Container>
+      <Container justify="center">
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/griswold' component={Griswold} />

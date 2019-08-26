@@ -72,7 +72,7 @@ const Home = ()=>{
         <Grid item>
         <Paper className={classes.summaryPaper} elevation={24}>
           <Typography className={classes.summaryText}>
-            Welcome to my portfolio site.  Below I've listed some projects I've worked on.  Click each one to get a better idea of what I contributed or authored!.  Project Griswold is currently available, the other sections are on the way!
+            Welcome to my portfolio site.  Below I've listed some projects I've worked on.  Click each one to get a better idea of what I contributed or authored!  Project Griswold is currently available, the other sections are on the way!
           </Typography>
         </Paper>
         </Grid>
@@ -80,6 +80,7 @@ const Home = ()=>{
           <Grid item>
             <PortfolioCard 
               image={'/images/griswold/griswold.png'}
+              link="/griswold"
               header={'Project Griswold'}
               body={
                 'Project Griswold is a c++ and Unreal Engine 4 sandbox to explore agent-based economics, UI scripting and shader authoring.  Based on concepts I designed and developed for Star Citizen and using assets from the Relic classic Homeworld 2.'

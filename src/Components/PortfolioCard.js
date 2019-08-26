@@ -45,7 +45,7 @@ export default function PortfolioCard({header, body, image, link, tags}) {
 
   return (
     <Card className={classes.card} elevation={10}> 
-    <RouterLink to="/griswold" className={classes.routerLink}>
+    <RouterLink to={link} className={classes.routerLink}>
       <div className={classes.cardDiv}>
 
         <CardMedia

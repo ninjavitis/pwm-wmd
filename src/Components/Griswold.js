@@ -1,18 +1,21 @@
 import React from 'react';
-import { Grid,} from "@material-ui/core";
+import { Grid, Paper} from "@material-ui/core";
 
 import DetailCard from './DetailCard'
 
 const Griswold = () => {
 
   return (
+    <>
+    <Paper>
+    </Paper>
     <Grid container direction="column" justify='center' spacing={3}>
       <Grid item>
         <DetailCard 
           header="VEHICLE SCRIPTING 1"
           subheader="Unreal Enginge 4 Blueprint Script"
           image="/images/griswold/SHIP_scripted_functions.png"
-          body="bakl;djfa;lksjfa;kjf;akljsf;lakjfa;slkjfa;lksdjf"
+          body="These events handle the spawning and connection of vehicle equimpent, changing the vehicle mass (due to cargo loading and equipment changes), switching on and off gear, updating the ship inventory, and cleaning up the mess when the vehicle is destroyed."
         />
       </Grid>
       <Grid item>
@@ -36,7 +39,7 @@ const Griswold = () => {
           header="PROCEDURAL ASTEROID GENERATION"
           subheader="Unreal Enginge 4 Blueprint Script"
           image="/images/griswold/SCRIPTING_randomAsteroidSeeder.png"
-          body="The procedural asteroid generator is designed to place objects in the world programmatically.  This generator is designed to place objects in an orbit around another body.  In my case it is used to place them within the planetary rings.  It takes an object count, Inner Diameter, Outer Diameter and depthMin and depthMax to determine the width and depth of the band in which the asteroids will spawn.  It also takes a degress min and max to control the length of the band and its rotation around the pivot."
+          body="The procedural asteroid generator places objects in the world programmatically in orbit around another body. It takes an object count, Inner Diameter, Outer Diameter and depthMin and depthMax to determine the width and depth of the band in which the asteroids will spawn.  It also takes a degress min and max to control the length of the band and its rotation around the pivot."
         />
       </Grid>
       <Grid item>
@@ -44,7 +47,7 @@ const Griswold = () => {
           header="CUSTOM MATERIAL SHADER"
           subheader="Unreal Enginge 4 Blueprint Script"
           image="/images/griswold/SHADER_station.png"
-          body="The materials used in Homeworld are incompatible with Unreal Engine 4, so I wrote my own.  This shader enables physically based rendering (which was not enabled in the original engine), and has a window glow pulse created by combining out of phase sine waves."
+          body="The materials used in Homeworld 2 (from which I borrowed my placeholder assets) are incompatible with Unreal Engine 4, so I wrote my own.  This shader enables physically based rendering, and has a window glow pulse created by combining out of phase sine waves."
         />
       </Grid>
       <Grid item>
@@ -64,6 +67,7 @@ const Griswold = () => {
         />
       </Grid>
     </Grid>
+    </>
   );
 }
 

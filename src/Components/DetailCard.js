@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   card: {
     transitionDuration: '0.3s',
     background:'#333',
-    maxWidth: '90vw'
+    maxWidth: '80%'
   },
   cardTitle:{
     color: '#d0ff00',
@@ -40,7 +40,6 @@ const useStyles = makeStyles({
     "&:hover":{
       backgroundColor: 'transparent',
     },
-    
   },
   media: {
     width: '100%',

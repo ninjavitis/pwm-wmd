@@ -38,6 +38,7 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
+  
 });
 
 export default function PortfolioCard({header, body, image, link, tags}) {

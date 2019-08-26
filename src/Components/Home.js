@@ -2,7 +2,6 @@ import React from 'react';
 import { Grid, Typography, Paper, Button} from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
 import PortfolioCard from './PortfolioCard'
-import { homedir } from 'os';
 
 const useStyles = makeStyles(theme => ({
   headerBox:{
@@ -72,7 +71,7 @@ const Home = ()=>{
         <Grid item>
         <Paper className={classes.summaryPaper} elevation={24}>
           <Typography className={classes.summaryText}>
-            Welcome to my portfolio site.  Below I've listed some projects I've worked on.  Click each one to get a better idea of what I contributed or authored!  Project Griswold is currently available, the other sections are on the way!
+            Welcome to my portfolio site.  Below I've listed some projects I've worked on, click each one for work examples.  Project Griswold is currently available, the other sections are on the way!
           </Typography>
         </Paper>
         </Grid>

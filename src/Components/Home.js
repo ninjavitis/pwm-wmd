@@ -72,7 +72,7 @@ const Home = ()=>{
         <Grid item>
         <Paper className={classes.summaryPaper} elevation={24}>
           <Typography className={classes.summaryText}>
-            I'm a highly motivated and passionate developer with over 7 years of PC and console game development experience in QA, Project Management and System Design roles. I also have 5+ years of event production and travel logistics experience as well a background in datacenter operations and system admin. Recently graduated from the University of Utah full-stack development program with a focus on Javascript, React, Ruby and Rails.
+            Welcome to my portfolio site.  Below I've listed some projects I've worked on.  Click each one to get a better idea of what I contributed or authored!.  Project Griswold is currently available, the other sections are on the way!
           </Typography>
         </Paper>
         </Grid>

@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton'
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
-const imageRatio = 0.5625
-const imageWidth = 85
 
 const useStyles = makeStyles({
   card: {
@@ -18,14 +22,13 @@ const useStyles = makeStyles({
   },
   cardTitle:{
     color: '#d0ff00',
-      fontFamily: "objektiv-mk1, sans-serif",
-      fontWeight: '900',
-      fontStyle: 'italic',
+    fontFamily: "objektiv-mk1, sans-serif",
+    fontWeight: '900',
   },
   cardText:{
     color: '#aaa',
-      fontFamily: "objektiv-mk1, sans-serif",
-      fontWeight: '400',
+    fontFamily: "objektiv-mk1, sans-serif",
+    fontWeight: '400',
   },
   linkButton:{
     color: '#3700ff',
@@ -45,11 +48,43 @@ const useStyles = makeStyles({
     width: '100%',
     paddingTop: '56.25%'
   },
+  shuttleButton:{
+    color: '#ff0078',
+  }
 });
 
 
-const DetailCard = ({image, header, subheader, body}) => {
+const DetailCard = ({image, images, header, subheader, body}) => {
+  const [slide, setSlide] = useState(0)
   const classes = useStyles();
+
+  // changes the slide left or right.  if at either end of the image list wrap to the other end.
+  const changeSlide = (direction) =>{
+    if (direction === 'fwd'){
+      if (slide === images.length -1){
+        setSlide(0)
+      } else {
+        setSlide(slide + 1)
+      }
+    } else if (direction === 'back'){
+      if (slide === 0){
+        setSlide(images.length -1)
+      } else {
+        setSlide(slide - 1)
+      }
+    }
+  }
+
+  const shuttleButtons = (
+    <ButtonGroup size="small">
+      <IconButton onClick={()=>changeSlide('back')} className={classes.shuttleButton}>
+        <NavigateBeforeIcon/>
+      </IconButton>
+      <IconButton onClick={()=>changeSlide('fwd')} className={classes.shuttleButton}>
+        <NavigateNextIcon/>
+      </IconButton>
+    </ButtonGroup>
+  )
 
   return (
     <Card className={classes.card}>
@@ -60,15 +95,18 @@ const DetailCard = ({image, header, subheader, body}) => {
               />
             <CardMedia
                 className={classes.media}
-                image={image}
+                image={images[slide]}
                 title={header}
                 />
+        </CardActionArea>
+        <CardActions disableSpacing>
+        {images.length > 1 && shuttleButtons}
+        </CardActions>
           <CardContent>
           <Typography className={classes.cardText}>
               {body}
             </Typography>
           </CardContent>
-        </CardActionArea>
     </Card>
   );
 }

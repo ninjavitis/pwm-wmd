@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   card: {
     transitionDuration: '0.3s',
     background:'#333',
-    maxWidth: '80%'
+    maxWidth: '90%'
   },
   cardTitle:{
     color: '#d0ff00',
@@ -90,14 +90,14 @@ const DetailCard = ({image, images, header, subheader, body}) => {
     <Card className={classes.card}>
         <CardActionArea>
           <CardHeader
-              className={classes.cardTitle}
-              title={header}
-              />
-            <CardMedia
-                className={classes.media}
-                image={images[slide]}
-                title={header}
-                />
+            className={classes.cardTitle}
+            title={header}
+          />
+          <CardMedia
+            className={classes.media}
+            image={images[slide]}
+            title={header}
+          />
         </CardActionArea>
         <CardActions disableSpacing>
         {images.length > 1 && shuttleButtons}

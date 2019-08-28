@@ -6,7 +6,7 @@ import { styled, makeStyles } from '@material-ui/styles';
 
 import NavBar from './Components/Navbar'
 import Home from './Components/Home'
-import Griswold from './Components/Griswold'
+import Main from './Components/Main'
 
 
 
@@ -19,13 +19,7 @@ function App() {
 
   return (
     <AppBackground>
-      <NavBar />
-      <Container justify="center">
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/griswold' component={Griswold} />
-        </Switch>
-      </Container>
+      <Main />  
     </AppBackground>
   );
 }

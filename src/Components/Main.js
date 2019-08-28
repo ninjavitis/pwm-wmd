@@ -19,6 +19,7 @@ import Grid from '@material-ui/core/Grid'
 import { ListSubheader, Collapse } from '@material-ui/core';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import Griswold from './Griswold'
 
 const drawerWidth = 240;
 
@@ -49,8 +50,8 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    background:'#343434'
-
+    background:'#343434',
+    color:'#bbb'
   },
   content: {
     flexGrow: 1,
@@ -64,11 +65,17 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '900',
     fontStyle: 'italic',
   },
+  linkIcon:{
+    color:'#ccc'
+  },
+  subItem:{
+    paddingLeft:theme.spacing(4)
+  },
 }));
 
 
 
-function ResponsiveDrawer(props) {
+function Main(props) {
   const { container } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -110,22 +117,22 @@ function ResponsiveDrawer(props) {
         </ListItem>
         <Collapse in={grisOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button>
+            <ListItem button className={classes.subItem}>
               Vehicle Steering
             </ListItem>
-            <ListItem button>
+            <ListItem button className={classes.subItem}>
               Vehicle Resource System
             </ListItem>
-            <ListItem button>
+            <ListItem button className={classes.subItem}>
               Procedural Asteroid Spawner
             </ListItem>
-            <ListItem button>
+            <ListItem button className={classes.subItem}>
               Dynamic Economy
             </ListItem>
-            <ListItem button>
+            <ListItem button className={classes.subItem}>
               UI Scripting
             </ListItem>
-            <ListItem button>
+            <ListItem button className={classes.subItem}>
               <ListItemIcon>
                 {gitHubIcon}
               </ListItemIcon>
@@ -146,6 +153,7 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <List>
+        <ListSubheader component="div">Contact</ListSubheader>
         <ListItem button component="a" href="mailto:peter.mackay.1187@gmail.com">
           <ListItemIcon>
             <SvgIcon className={classes.linkIcon}>
@@ -222,18 +230,10 @@ function ResponsiveDrawer(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-
+          <Griswold />
       </main>
     </div>
   );
 }
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  container: PropTypes.instanceOf(typeof Element === 'undefined' ? Object : Element),
-};
-
-export default ResponsiveDrawer;
+export default Main

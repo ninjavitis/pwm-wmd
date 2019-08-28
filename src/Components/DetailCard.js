@@ -12,6 +12,9 @@ import IconButton from '@material-ui/core/IconButton'
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import Modal from '@material-ui/core/Modal';
+import { setState } from 'expect/build/jestMatchersObject';
+
 
 
 const useStyles = makeStyles({
@@ -50,13 +53,42 @@ const useStyles = makeStyles({
   },
   shuttleButton:{
     color: '#ff0078',
-  }
+  },
+  paper: {
+    position: 'absolute',
+    backgroundColor: '#555',
+    border: '2px solid #333',
+    padding: '10px', 
+    top: '50%',
+    left: '50%',
+    transform: `translate(-50%, -50%)`,
+  },
 });
 
 
 const DetailCard = ({image, images, header, subheader, body}) => {
   const [slide, setSlide] = useState(0)
   const classes = useStyles();
+  const [showVideo, setShowVideo] = useState(false)
+
+  const VideoModal = ({videoUrl}) => {
+    return(
+      <Modal open={showVideo} onClose={()=>setShowVideo(false)}>
+        <div className={classes.paper}>
+          <iframe 
+              title='test'
+              width="560" 
+              height="315" 
+              src={videoUrl} 
+              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+            />
+        </div>
+      </Modal>
+    )
+  }
+  
+
 
   // changes the slide left or right.  if at either end of the image list wrap to the other end.
   const changeSlide = (direction) =>{
@@ -100,7 +132,9 @@ const DetailCard = ({image, images, header, subheader, body}) => {
           />
         </CardActionArea>
         <CardActions disableSpacing>
+          <Button onClick={()=>setShowVideo(true)}>Video</Button>
         {images.length > 1 && shuttleButtons}
+        <VideoModal videoUrl="https://www.youtube.com/embed/2n9ZLhzwNRY"/>
         </CardActions>
           <CardContent>
           <Typography className={classes.cardText}>

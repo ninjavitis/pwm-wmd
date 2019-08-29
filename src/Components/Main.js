@@ -23,6 +23,7 @@ import Griswold from './Griswold'
 
 import Introduction from './Griswold/Introduction'
 import VehicleSteering from './Griswold/VehicleSteering'
+import ResourceSystem from './Griswold/ResourceSystem'
 
 const drawerWidth = 240;
 
@@ -100,6 +101,9 @@ function Main(props) {
       case 'gris_steering':
         return <VehicleSteering />
 
+        case 'gris_resource':
+          return <ResourceSystem />
+
       default:
         return <Introduction />
     }
@@ -141,7 +145,7 @@ function Main(props) {
             <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_steering')}>
               Vehicle Steering
             </ListItem>
-            <ListItem button className={classes.subItem}>
+            <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_resource')}>
               Vehicle Resource System
             </ListItem>
             <ListItem button className={classes.subItem}>
@@ -214,6 +218,7 @@ function Main(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
+            Peter Mackay 2019
           </Typography>
         </Toolbar>
       </AppBar>

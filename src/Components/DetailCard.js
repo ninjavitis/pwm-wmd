@@ -33,6 +33,9 @@ const useStyles = makeStyles({
     fontFamily: "objektiv-mk1, sans-serif",
     fontWeight: '400',
   },
+  cardTextArea:{
+    minWidth: '100%',
+  },
   linkButton:{
     color: '#3700ff',
     fontFamily: "objektiv-mk1, sans-serif",
@@ -152,7 +155,7 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
         <VideoModal />
         <ImageModal image={images[slide]}/>
         </CardActions>
-          <CardContent>
+          <CardContent className={classes.cardTextArea}>
           <Typography className={classes.cardText}>
               {body}
             </Typography>

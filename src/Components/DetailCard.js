@@ -63,6 +63,12 @@ const useStyles = makeStyles({
     left: '50%',
     transform: `translate(-50%, -50%)`,
   },
+  image: {
+    width:'90vw',
+  },
+  button:{
+    background:'#ffdf0f'
+  }
 });
 
 
@@ -70,6 +76,7 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
   const [slide, setSlide] = useState(0)
   const classes = useStyles();
   const [showVideo, setShowVideo] = useState(false)
+  const [showImage, setShowImage] = useState(false)
 
   const VideoModal = () => {
     return(
@@ -83,6 +90,16 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen
           />
+        </div>
+      </Modal>
+    )
+  }
+
+  const ImageModal = ({image}) => {
+    return(
+      <Modal open={showImage} onClose={()=>setShowImage(false)}>
+        <div className={classes.paper}>
+          <img src={image} alt='' className={classes.image}/>
         </div>
       </Modal>
     )
@@ -118,7 +135,7 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
 
   return (
     <Card className={classes.card}>
-        <CardActionArea>
+        <CardActionArea onClick={()=>setShowImage(true)}>
           <CardHeader
             className={classes.cardTitle}
             title={header}
@@ -130,9 +147,10 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
           />
         </CardActionArea>
         <CardActions disableSpacing>
-          <Button onClick={()=>setShowVideo(true)}>Video</Button>
+          <Button onClick={()=>setShowVideo(true)} className={classes.button}>Video</Button>
         {images.length > 1 && shuttleButtons}
         <VideoModal />
+        <ImageModal image={images[slide]}/>
         </CardActions>
           <CardContent>
           <Typography className={classes.cardText}>

@@ -150,7 +150,7 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
           />
         </CardActionArea>
         <CardActions disableSpacing>
-          <Button onClick={()=>setShowVideo(true)} className={classes.button}>Video</Button>
+          {videoUrl !=="" && <Button onClick={()=>setShowVideo(true)} className={classes.button}>Video</Button>}
         {images.length > 1 && shuttleButtons}
         <VideoModal />
         <ImageModal image={images[slide]}/>

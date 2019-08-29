@@ -24,6 +24,8 @@ import Griswold from './Griswold'
 import Introduction from './Griswold/Introduction'
 import VehicleSteering from './Griswold/VehicleSteering'
 import ResourceSystem from './Griswold/ResourceSystem'
+import ProceduralAsteroid from './Griswold/ProceduralAsteroid'
+import MarketUI from './Griswold/MarketUI'
 
 const drawerWidth = 240;
 
@@ -104,6 +106,12 @@ function Main(props) {
         case 'gris_resource':
           return <ResourceSystem />
 
+        case 'gris_asteroid':
+          return <ProceduralAsteroid />
+
+        case 'gris_marketUI':
+          return <MarketUI />
+
       default:
         return <Introduction />
     }
@@ -148,16 +156,16 @@ function Main(props) {
             <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_resource')}>
               Vehicle Resource System
             </ListItem>
-            <ListItem button className={classes.subItem}>
+            <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_asteroid')}>
               Procedural Asteroid Spawner
             </ListItem>
             <ListItem button className={classes.subItem}>
               Dynamic Economy
             </ListItem>
-            <ListItem button className={classes.subItem}>
+            <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_marketUI')}>
               UI Scripting
             </ListItem>
-            <ListItem button className={classes.subItem}>
+            <ListItem button className={classes.subItem} >
               <ListItemIcon>
                 {gitHubIcon}
               </ListItemIcon>

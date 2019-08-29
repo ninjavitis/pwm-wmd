@@ -21,6 +21,9 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Griswold from './Griswold'
 
+import Introduction from './Griswold/Introduction'
+import VehicleSteering from './Griswold/VehicleSteering'
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -71,20 +74,35 @@ const useStyles = makeStyles(theme => ({
   subItem:{
     paddingLeft:theme.spacing(4)
   },
+  subHeader:{
+    color:'#ddd'
+  },
 }));
-
-
 
 function Main(props) {
   const { container } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
   const [grisOpen, setGrisOpen] = useState(false)
+  const [mainPage, setMainPage] = useState('gris_default')
+  const [drawerHeader, setDrawerHeader] = useState()
 
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
+  }
+
+  const MainDisplay = () => {
+    switch (mainPage) {
+      case 'gris_intro':
+        return <Introduction />
+
+      case 'gris_steering':
+        return <VehicleSteering />
+
+      default:
+        return <Introduction />
+    }
   }
 
   const linkedInIcon = (
@@ -110,14 +128,17 @@ function Main(props) {
       </Grid>
       <Divider />
       <List component="nav">
-        <ListSubheader component="div">Projects</ListSubheader>
+        <ListSubheader component="div" className={classes.subHeader}>Projects</ListSubheader>
         <ListItem button onClick={()=>setGrisOpen(!grisOpen)}>
           <ListItemText primary="PROJECT GRISWOLD" />
           {grisOpen ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={grisOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.subItem}>
+            <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_default')}>
+              Introduction
+            </ListItem>
+            <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_steering')}>
               Vehicle Steering
             </ListItem>
             <ListItem button className={classes.subItem}>
@@ -153,7 +174,7 @@ function Main(props) {
       </List>
       <Divider />
       <List>
-        <ListSubheader component="div">Contact</ListSubheader>
+        <ListSubheader component="div" className={classes.subHeader}>Contact</ListSubheader>
         <ListItem button component="a" href="mailto:peter.mackay.1187@gmail.com">
           <ListItemIcon>
             <SvgIcon className={classes.linkIcon}>
@@ -193,7 +214,6 @@ function Main(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
           </Typography>
         </Toolbar>
       </AppBar>
@@ -230,7 +250,7 @@ function Main(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-          <Griswold />
+        <MainDisplay />
       </main>
     </div>
   );

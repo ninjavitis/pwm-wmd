@@ -66,30 +66,28 @@ const useStyles = makeStyles({
 });
 
 
-const DetailCard = ({image, images, header, subheader, body}) => {
+const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
   const [slide, setSlide] = useState(0)
   const classes = useStyles();
   const [showVideo, setShowVideo] = useState(false)
 
-  const VideoModal = ({videoUrl}) => {
+  const VideoModal = () => {
     return(
       <Modal open={showVideo} onClose={()=>setShowVideo(false)}>
         <div className={classes.paper}>
           <iframe 
-              title='test'
-              width="560" 
-              height="315" 
-              src={videoUrl} 
-              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
-            />
+            title='test'
+            width="560" 
+            height="315" 
+            src={videoUrl} 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+          />
         </div>
       </Modal>
     )
   }
   
-
-
   // changes the slide left or right.  if at either end of the image list wrap to the other end.
   const changeSlide = (direction) =>{
     if (direction === 'fwd'){
@@ -134,7 +132,7 @@ const DetailCard = ({image, images, header, subheader, body}) => {
         <CardActions disableSpacing>
           <Button onClick={()=>setShowVideo(true)}>Video</Button>
         {images.length > 1 && shuttleButtons}
-        <VideoModal videoUrl="https://www.youtube.com/embed/2n9ZLhzwNRY"/>
+        <VideoModal />
         </CardActions>
           <CardContent>
           <Typography className={classes.cardText}>

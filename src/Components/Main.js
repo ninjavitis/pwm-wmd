@@ -165,7 +165,7 @@ function Main(props) {
             <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_marketUI')}>
               UI Scripting
             </ListItem>
-            <ListItem button className={classes.subItem} >
+            <ListItem button component="a" href="https://github.com/ninjavitis/GRISWOLD_Public" className={classes.subItem} >
               <ListItemIcon>
                 {gitHubIcon}
               </ListItemIcon>

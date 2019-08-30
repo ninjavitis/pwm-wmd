@@ -60,7 +60,6 @@ const useStyles = makeStyles({
   paper: {
     position: 'absolute',
     backgroundColor: '#555',
-    border: '2px solid #333',
     padding: '10px', 
     top: '50%',
     left: '50%',
@@ -71,6 +70,9 @@ const useStyles = makeStyles({
   },
   button:{
     background:'#ffdf0f'
+  },  
+  videoModal:{
+    border: '2px solid #ff0078',
   }
 });
 

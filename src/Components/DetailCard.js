@@ -72,6 +72,7 @@ const useStyles = makeStyles({
     background:'#ffdf0f'
   },  
   videoModal:{
+    width:'90vw',
     border: '2px solid #ff0078',
   }
 });
@@ -89,8 +90,8 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
         <div className={classes.paper}>
           <iframe 
             title='test'
-            width="560" 
-            height="315" 
+            width="700" 
+            height="393.75" 
             src={videoUrl} 
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen

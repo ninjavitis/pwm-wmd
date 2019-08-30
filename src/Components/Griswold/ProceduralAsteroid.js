@@ -24,7 +24,7 @@ const Griswold = () => {
           subheader="Unreal Enginge 4 Blueprint Script"
           videoUrl="https://www.youtube.com/embed/gUhd7KpqakU"
           images={["/images/griswold/SCRIPTING_randomAsteroidSeeder.png","/images/griswold/SCRIPTING_randomAstroids.png","/images/griswold/SCRIPTING_asteroids2.png"]}
-          body="The procedural asteroid generator places objects in the world programmatically in orbit around another body. It takes an object count, Inner Diameter, Outer Diameter and depthMin and depthMax to determine the width and depth of the band in which the asteroids will spawn.  It also takes a degress min and max to control the length of the band and its rotation around the pivot."
+          body={["The procedural asteroid generator places objects in the world programmatically in orbit around another body. It takes an object count, Inner Diameter, Outer Diameter and depthMin and depthMax to determine the width and depth of the band in which the asteroids will spawn.  It also takes a degress min and max to control the length of the band and its rotation around the pivot."]}
         />
       </Grid>
     </Grid>

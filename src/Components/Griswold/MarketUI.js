@@ -24,7 +24,7 @@ const Griswold = () => {
           subheader="Unreal Enginge 4 Blueprint Script"
           videoUrl="https://www.youtube.com/embed/AR_oTIKfIIE"
           images={["/images/griswold/UI_quantityButtons.png","/images/griswold/UI_buy_sell_update.png"]}
-          body="This script controls the behavior of the quantity buttons in the shop.  The player can increment or decrement the quantity, set the quantity to max, or 0. Quanitity incrementing is validated by checking the players available cargo space.  This way the player can never add more units to the order than he can carry.  "
+          body={["These scripts controls the behavior of the quantity buttons in the shop, and handle what happens after a purchase is made.  The player can increment or decrement the quantity, set the quantity to max, or 0.  Quanitity incrementing is validated by checking the players available cargo space.  This way the player can never add more units to the order than he can carry.","On purchase, funds are deducted from the wallet and the goods are added to the inventory. "]}
         />
       </Grid>
     </Grid>

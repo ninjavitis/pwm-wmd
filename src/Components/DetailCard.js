@@ -159,9 +159,9 @@ const DetailCard = ({image, images, videoUrl,header, subheader, body}) => {
         <ImageModal image={images[slide]}/>
         </CardActions>
           <CardContent className={classes.cardTextArea}>
-          <Typography className={classes.cardText}>
-              {body}
-            </Typography>
+              {body.map(paragraph=>(
+                <Typography paragraph className={classes.cardText}>{paragraph}</Typography>
+              ))}
           </CardContent>
     </Card>
   );

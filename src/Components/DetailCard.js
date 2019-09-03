@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     fontWeight: '400',
   },
   cardTextArea:{
-    minWidth: '100%',
+    flexGrow:'1'
   },
   linkButton:{
     color: '#3700ff',

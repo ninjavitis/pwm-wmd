@@ -28,6 +28,7 @@ import ProceduralAsteroid from './Griswold/ProceduralAsteroid'
 import MarketUI from './Griswold/MarketUI'
 import {Introduction as BMBIntro} from './BuyMyBits/Introduction'
 import APISelection from './BuyMyBits/APISelection'
+import CartControls from './BuyMyBits/CartControls'
 
 const drawerWidth = 240;
 
@@ -121,6 +122,9 @@ function Main(props) {
         case 'buyMyBits_API':
           return <APISelection />
 
+        case 'buyMyBits_Cart':
+          return <CartControls />
+
       default:
         return <Introduction />
     }
@@ -196,7 +200,7 @@ function Main(props) {
         <List>
         <ListSubheader component="div" className={classes.subHeader}>Web Projects</ListSubheader>
           <ListItem button onClick={()=>setBuyMyBitsOpen(!buyMyBitsOpen)}>
-            <ListItemText primary="Buy My Bits (coming soon)" />
+            <ListItemText primary="Buy My Bits" />
             {buyMyBitsOpen ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse in={buyMyBitsOpen} timeout="auto" unmountOnExit>
@@ -207,11 +211,11 @@ function Main(props) {
             <ListItem button className={classes.subItem} onClick={()=>setMainPage('buyMyBits_API')}>
               API Selection
             </ListItem>
-            <ListItem button className={classes.subItem}>
+            <ListItem button className={classes.subItem} onClick={()=>setMainPage('buyMyBits_Cart')}>
               Cart Controls
             </ListItem>
             <ListItem button className={classes.subItem}>
-              Stripe Checkout
+              Stripe Checkout (coming soon)
             </ListItem>
             <ListItem button component="a" href="https://github.com/ninjavitis/BuyMyBits" className={classes.subItem} >
               <ListItemIcon>

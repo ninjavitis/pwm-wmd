@@ -140,7 +140,7 @@ function Main(props) {
       </Grid>
       <Divider />
       <List component="nav">
-        <ListSubheader component="div" className={classes.subHeader}>Projects</ListSubheader>
+        <ListSubheader component="div" className={classes.subHeader}>Game Projects</ListSubheader>
         <ListItem button onClick={()=>setGrisOpen(!grisOpen)}>
           <ListItemText primary="PROJECT GRISWOLD" />
           {grisOpen ? <ExpandLess /> : <ExpandMore />}
@@ -159,9 +159,9 @@ function Main(props) {
             <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_asteroid')}>
               Procedural Asteroid Spawner
             </ListItem>
-            <ListItem button className={classes.subItem}>
-              Dynamic Economy
-            </ListItem>
+            {/* <ListItem button className={classes.subItem}>
+              Dynamic Economy (coming soon)
+            </ListItem> */}
             <ListItem button className={classes.subItem} onClick={()=>setMainPage('gris_marketUI')}>
               UI Scripting
             </ListItem>
@@ -175,15 +175,21 @@ function Main(props) {
           <Divider />
         </Collapse>
         <ListItem>
-          <ListItemText primary="Star Citizen" />
+          <ListItemText primary="Star Citizen (coming soon)" />
         </ListItem>
+        </List>
+        <List>
+        <ListSubheader component="div" className={classes.subHeader}>Web Projects</ListSubheader>
+          <ListItem>
+            <ListItemText primary="Buy My Bits (coming soon)" />
+          </ListItem>
+        </List>
+        <List>
+        <ListSubheader component="div" className={classes.subHeader}>Other Projects</ListSubheader>
         <ListItem>
-          <ListItemText primary="Buy My Bits" />
+          <ListItemText primary="Natural Twenty (coming soon)" />
         </ListItem>
-        <ListItem>
-          <ListItemText primary="Natural Twenty" />
-        </ListItem>
-      </List>
+        </List>
       <Divider />
       <List>
         <ListSubheader component="div" className={classes.subHeader}>Contact</ListSubheader>

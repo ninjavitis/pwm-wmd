@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   card: {
     transitionDuration: '0.3s',
     background:'#333',
-    maxWidth: '90%'
+    maxWidth: '100%'
   },
   cardTitle:{
     color: '#d0ff00',
@@ -72,7 +72,7 @@ const useStyles = makeStyles({
     background:'#ffdf0f'
   },  
   videoModal:{
-    width:'90vw',
+    width:'100vw',
     border: '2px solid #ff0078',
   }
 });

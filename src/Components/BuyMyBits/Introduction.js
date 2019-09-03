@@ -19,24 +19,24 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Griswold = () => {
+export const Introduction = () => {
   const classes = useStyles();
 
   return (
       <Grid container justify="center">
         <Grid item container justify="center">
-            <img src="/images/griswold/griswold.png" alt="Project Griswold" className={classes.image}/>
+            <img src="/images/buyMyBits/BuyMyBits_External.png" alt="Buy My Bits" className={classes.image}/>
         </Grid>
         <Grid item container justify="center">
         <Paper className={classes.foregroundPaper}>
         <Typography paragraph>
-          Project Griswold is a testbed + sandbox for an agent based economy simulation I have written in c++ for Unreal Engine 4.
+          Buy My Bits is an experimental shopping cart system built (almost) entirely in React and using the Semantic UI framework.
         </Typography>
         <Typography paragraph>
-          Each of the pages in this section discuss an individual feature of the project with script screenshots and video showing the feature in action.  Finally, you can view a selection of header files by following the github link to the left.  
+          Each of the pages in this section discuss an individual feature of the project with script screenshots.
         </Typography>
         <Typography>
-          I'm happy to showcase the full project source in person, and a packaged executable is available upon request.
+          You can visit the site or view the project source by clicking on the links to the left.  Heroku may be slow to load the page initially.
         </Typography>
       </Paper>
         </Grid>
@@ -44,4 +44,4 @@ const Griswold = () => {
   );
 }
 
-export default Griswold;
+export default Introduction;

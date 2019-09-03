@@ -18,8 +18,9 @@ const Griswold = () => {
   return (
     <>
     <Paper className={classes.container}>
+      <img src="/images/griswold/SHIP_scripted_functions.png"  alt="" />
     </Paper>
-    <Grid container direction="column" spacing={3}>
+    {/* <Grid container direction="column" spacing={3}>
       <Grid container item justify="center">
         <DetailCard 
           header="VEHICLE SCRIPTING 1"
@@ -76,7 +77,7 @@ const Griswold = () => {
           body="This script controls the behavior of the quantity buttons in the shop.  It validates the quantity by checking the space the player has before incrementing.  This way the player can never add more units to the order than he has inventory space.  "
         />
       </Grid>
-    </Grid>
+    </Grid> */}
     </>
   );
 }

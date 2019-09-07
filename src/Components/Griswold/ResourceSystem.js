@@ -24,7 +24,11 @@ const Griswold = () => {
           subheader="Unreal Enginge 4 Blueprint Script"
           images={["/images/griswold/SCRIPTING_resourceManagement.png"]}
           videoUrl="https://www.youtube.com/embed/YXxtB8JQDI0"
-          body={["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."]}
+          body={[
+            "The vehicle resource system is based around the idea that gear does work inefficiently.  Every piece of gear has a work attribute and an efficiency attribute.  The work attribute differs from item class to item class.  For instance, the work unit of a weapon is damage and the work unit for a shield generator is shielding.  The efficiency rating determines how much power is required per unit of work as well as how much waste heat is generated.", 
+            "Power is routed through a power manager that evaluates all incoming requests and fulfils them as best as it is able.  This can result in power shortages if the power supply is undersized, or if some external event has impacted powergeneration.",
+            "The resource system is implemented entirely in C++, but uses blueprint to connect the devices to the ship, and to the individual resource managers.  The Project Headers link to the left contains the .h file for the power manager, and the full source can be reviewed upon request."
+          ]}
         />
       </Grid>
     </Grid>

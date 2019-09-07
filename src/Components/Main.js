@@ -78,10 +78,13 @@ const useStyles = makeStyles(theme => ({
     color:'#ccc'
   },
   subItem:{
-    paddingLeft:theme.spacing(4)
+    paddingLeft:theme.spacing(4),
+    background:"#444"
   },
   subHeader:{
-    color:'#ddd'
+    color:'#ddd',
+    fontWeight: '900',
+
   },
 }));
 
@@ -159,7 +162,7 @@ function Main(props) {
       </Grid>
       <Divider />
       <List component="nav">
-        <ListSubheader component="div" className={classes.subHeader}>Game Projects</ListSubheader>
+        <ListSubheader component="div" className={classes.subHeader}>GAME PROJECTS</ListSubheader>
         <ListItem button onClick={()=>setGrisOpen(!grisOpen)}>
           <ListItemText primary="PROJECT GRISWOLD" />
           {grisOpen ? <ExpandLess /> : <ExpandMore />}
@@ -188,7 +191,7 @@ function Main(props) {
               <ListItemIcon>
                 {gitHubIcon}
               </ListItemIcon>
-              <ListItemText primary="Project Header Files" />
+              PROJECT GRISWOLD C++ Header Files"
             </ListItem>
           </List>
           <Divider />
@@ -198,7 +201,7 @@ function Main(props) {
         </ListItem>
         </List>
         <List>
-        <ListSubheader component="div" className={classes.subHeader}>Web Projects</ListSubheader>
+        <ListSubheader component="div" className={classes.subHeader}>WEB PROJECTS</ListSubheader>
           <ListItem button onClick={()=>setBuyMyBitsOpen(!buyMyBitsOpen)}>
             <ListItemText primary="Buy My Bits" />
             {buyMyBitsOpen ? <ExpandLess /> : <ExpandMore />}
@@ -221,27 +224,27 @@ function Main(props) {
               <ListItemIcon>
                 {gitHubIcon}
               </ListItemIcon>
-              <ListItemText primary="Buy My Bits Source" />
+              Buy My Bits Source
               </ListItem>
             <ListItem button component="a" href="https://buy-my-bits.herokuapp.com" className={classes.subItem} >
               <ListItemIcon>
                 {linkIcon}
               </ListItemIcon>
-              <ListItemText primary="Buy My Bits Website" />
+              Buy My Bits Website
             </ListItem>
             </List>
             <Divider />
           </Collapse>
         </List>
         <List>
-        <ListSubheader component="div" className={classes.subHeader}>Other Projects</ListSubheader>
+        <ListSubheader component="div" className={classes.subHeader}>OTHER PROJECTS</ListSubheader>
         <ListItem>
           <ListItemText primary="Natural Twenty (coming soon)" />
         </ListItem>
         </List>
       <Divider />
       <List>
-        <ListSubheader component="div" className={classes.subHeader}>Contact</ListSubheader>
+        <ListSubheader component="div" className={classes.subHeader}>CONTACT</ListSubheader>
         <ListItem button component="a" href="mailto:peter.mackay.1187@gmail.com">
           <ListItemIcon>
             <SvgIcon className={classes.linkIcon}>

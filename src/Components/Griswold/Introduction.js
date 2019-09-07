@@ -36,7 +36,7 @@ const Griswold = () => {
           Each of the pages in this section discuss an individual feature of the project with script screenshots and video showing the feature in action.  Finally, you can view a selection of header files by following the github link to the left.            I'm happy to showcase the full project source in person, and a packaged executable is available upon request.  
         </Typography>
         <Typography>
-          Some art has been borrowed from the Gearbox/Relic classic 'Homeworld 2' and is not for release.
+          Some art is from the Relic classic 'Homeworld 2' and is copyright Gearbox Software.  Used with permission.
         </Typography>
       </Paper>
         </Grid>

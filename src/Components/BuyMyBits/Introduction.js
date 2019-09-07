@@ -30,7 +30,7 @@ export const Introduction = () => {
         <Grid item container justify="center">
         <Paper className={classes.foregroundPaper}>
         <Typography paragraph>
-          Buy My Bits is an experimental shopping cart system built (almost) entirely in React and using the Semantic UI framework.
+          Buy My Bits is an experimental shopping cart system built (almost) entirely in React and using the Semantic UI framework.  It has a selectable API that lets the user choose between an external data source, and an internal Rails + Postgres datasource.
         </Typography>
         <Typography paragraph>
           Each of the pages in this section discuss an individual feature of the project with script screenshots.
